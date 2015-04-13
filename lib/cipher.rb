@@ -10,7 +10,7 @@ class Cipher
                 finalarr.push(alph.index(i))
             end
             finalarr.each do |x|
-                endarr.push(alph[x + shift])
+                endarr.push(alph[((shift + 26) % 26)])
             end
             endmsg = endarr.join()
             return endmsg
@@ -18,5 +18,5 @@ class Cipher
 end
 
 new = Cipher.new
-new.encrypt("hello", 3)
+new.encrypt("aaa", 1)
 
