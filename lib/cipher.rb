@@ -4,6 +4,7 @@ class Cipher
             arr = []
             finalarr = []
             endarr = []
+
             arr = message.gsub(/\s+/, "").split('')
             arr.each do |i|
                 finalarr.push(alph.index(i))
@@ -11,10 +12,11 @@ class Cipher
             finalarr.each do |x|
                 endarr.push(alph[x + shift])
             end
-            return endarr
+            endmsg = endarr.join()
+            return endmsg
         end
 end
 
 new = Cipher.new
-new.encrypt("cat", 2)
+new.encrypt("hello", 3)
 
